@@ -19,7 +19,7 @@ const storeSchema = new mongoose.Schema({
 
 storeSchema.pre('save', function(next) {
 	if (!this.isModified('name')) return next()
-	this.slug = slug.this.name
+	this.slug = slug(this.name)
 	next()
 	// TODO make slugs unique
 })
