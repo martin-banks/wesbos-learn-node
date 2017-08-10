@@ -10,9 +10,11 @@ const { homepage, addStore, createStore, getStores, editStore, updateStore } = s
 
 router.get('/', catchErrors(getStores))
 router.get('/stores', catchErrors(getStores))
+
 router.get('/add', addStore)
 router.post('/add', catchErrors(createStore))
 router.post('/add/:id', catchErrors(updateStore))
+
 router.get('/store/:id/edit', catchErrors(editStore))
 
 module.exports = router;
